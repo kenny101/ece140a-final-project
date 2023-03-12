@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body>
+    <main class="snap-y snap-mandatory h-screen overflow-auto overflow-x-hidden">
+        <!-- Navbar -->
+        <nav class="sticky top-0 px-2 py-3 flex justify-between items-center bg-transparent">
+            <a class="font-bold leading-none " href="#">
+                <h1 class="text-2xl">SlideShare</h1>
+            </a>
+            <ul class="flex">
+                <li class="mr-4">
+                    <a class="text-gray-700 font-bold hover:text-black" href="./signin.html">Sign In</a>
+                </li>
+
+                <li class="mr-0">
+                    <a class="text-gray-700 font-bold hover:text-gray-800 hover:bg-gray-400 bg-gray-200 py-1 px-4 rounded-full"
+                        href="./signup.html">Sign
+                        Up</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- About me section -->
+        <section class="snap-start bg-amber-100 w-screen h-screen p-20">
+            <h2 class="text-5xl font-bold text-center text-gray-800">
+                Hi, I'm Kenny!
+            </h2>
+            <div class="flex items-center flex-wrap pt-10">
+                <div class="w-full md:w-1/2 p-10">
+                    <h4 class="text-4xl text-gray-800 font-bold mb-5">Aspire to turn ideas into reality with technology
+                    </h4>
+                    <p class="text-2xl text-gray-600 mb-8">I'm a fourth year Computer Engineering Major with a passion
+                        in
+                        designing and building all things for the web.</p>
+                </div>
+                <div class="flex w-full md:w-1/2 justify-center items-center">
+                    <img src="../assets/mobile_app.svg" alt="abstract image of mobile app on phone" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section-->
+        <section class="snap-start bg-red-100 w-screen h-screen p-20">
+            <h2 class="text-5xl font-bold text-center text-gray-800 mb-20">
+                Features
+            </h2>
+            <div class="flex items-center flex-wrap">
+                <div class="flex w-full md:w-1/2 justify-center items-center">
+                    <img src="../assets/web_tech.svg" alt="abstract image of web technology" />
+                </div>
+                <div class="w-full md:w-1/2 p-10 mb-200">
+                    <h4 class="text-4xl text-gray-800 font-bold">
+                        <p class="text-gray-600 mb-8">An extension of Slidespace for ECE 140a</p>
+                    </h4>
+                    <p class="text-2xl text-gray-600 mb-8">Display MVP progress of your ideas and be able to view and
+                        give
+                        feedback on Slidespace ideas!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action section -->
+        <section class="snap-start bg-purple-100 w-screen h-screen">
+            <div class="flex items-center flex-wrap p-20">
+                <div class="w-full md:w-1/2 p-10">
+                    <h4 class="text-7xl text-gray-800 font-bold mb-10"> Sign up now
+                    </h4>
+                    <p class="text-gray-600 text-2xl mb-8">Join students of ECE140a and start sharing ideas</p>
+                    <button href="./signup.html" class="text-2xl bg-purple-500 hover:bg-purple-400 text-white font-bold py-2 px-4 border-b-4 border-purple-700 hover:border-purple-500 rounded">
+                        <a href="./signup.html">Sign Up Now</a>
+                    </button>
+                </div>
+                <div class="flex w-full md:w-1/2 justify-center items-center">
+                    <img src="../assets/ideas.svg" alt="abstract image of mobile app on phone" />
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
