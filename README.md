@@ -1,8 +1,28 @@
 # ece-140a-winter-2023-final-project-kenny101
 
-## Update 1:
-https://user-images.githubusercontent.com/53395124/224522708-c55c2732-07e1-43b7-9b9e-15c63624513a.mp4
+## List of Completed Features and Required Work to be Done
+- [x] Working Registration Page
+- [x] Working Login Page
+- [x] MVP Updates Page with all three weeks of progress
+- [X] Implement Leaderboard Page with Slidespace Integration
+- [X] Implement commenting system
+- [x] Implement delete comments
+- [ ] Implement edit comments
+- [ ] Implement Forgot Password System
+- [ ] Update Database, Info Arch, and Systems Design Diagrams
+- [ ] Make a video of the Website and its features
+- [ ] Diagram for folder structure, comments, & REST routes
+- [ ] Profile page to change account details
 
+
+### Extra Credit Features Implemented:
+- [x] Web Hosting on Provider
+- [x] Added CSS to provide better UI 
+- [x] Session Expiry - Auto Logout
+- [ ] Edit Comment in Leaderboard Commenting System
+
+
+### Extra Credit Live Website: [Click here to see the live website.](https://0855-2603-8001-8e00-5e00-1d2e-19a6-9c85-8ddb.ngrok.io/)
 
 ### Database Design
 ![database-design](https://user-images.githubusercontent.com/53395124/224523478-16abedd3-eb6e-4669-a388-30b76111f540.png)
