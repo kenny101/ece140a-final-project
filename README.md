@@ -10,6 +10,8 @@ PID: A16138682
 
 ### Extra Credit Live Website: [Click here to see the live website.](https://0855-2603-8001-8e00-5e00-1d2e-19a6-9c85-8ddb.ngrok.io/)
 
+https://user-images.githubusercontent.com/53395124/227124110-a16337dd-fb2d-4677-ab6d-2a4dd0db9792.mp4
+
 ### File Structure
 
 <i>File structure differs from assignment outline, use the diagram below as an outline instead. </i>
