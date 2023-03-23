@@ -369,27 +369,27 @@ async def get_updates_page_html(current_user: User = Depends(get_current_user)):
     return {"html":readHtmlBody("updates.html")}
 
 @app.get("/leaderboard-html/")
-async def get_updates_page_html(current_user: User = Depends(get_current_user)):
+async def get_leaderboard_page_html(current_user: User = Depends(get_current_user)):
     return {"html":readHtmlBody("leaderboard.html")}
 
 @app.get("/profile-html/")
-async def get_updates_page_html(current_user: User = Depends(get_current_user)):
+async def get_profile_page_html(current_user: User = Depends(get_current_user)):
     return {"html":readHtmlBody("profile.html")}
 
 @app.get("/blog-1-html/")
-async def get_updates_page_html(current_user: User = Depends(get_current_user)):
+async def get_blog_week_1_html(current_user: User = Depends(get_current_user)):
     return {"html":readHtmlBody("blog-1.html")}
 
 @app.get("/blog-2-html/")
-async def get_updates_page_html(current_user: User = Depends(get_current_user)):
+async def get_blog_week_2_html(current_user: User = Depends(get_current_user)):
     return {"html":readHtmlBody("blog-2.html")}
 
 @app.get("/blog-3-html/")
-async def get_updates_page_html(current_user: User = Depends(get_current_user)):
+async def get_blog_week_3_html(current_user: User = Depends(get_current_user)):
     return {"html":readHtmlBody("blog-3.html")}
 
 @app.get("/comments-html/")
-async def get_updates_page_html(current_user: User = Depends(get_current_user)):
+async def get_comments_page_html(current_user: User = Depends(get_current_user)):
     return {"html":readHtmlBody("comments.html")}
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 # HTML Page Routes
@@ -398,7 +398,7 @@ def get_homepage(request: Request) -> HTMLResponse:
     return views.TemplateResponse('homepage.html', {"request": request})
 
 @app.get('/reset', response_class=HTMLResponse)
-def get_homepage(request: Request) -> HTMLResponse:
+def get_reset_page(request: Request) -> HTMLResponse:
     return views.TemplateResponse('reset.html', {"request": request})
 
 
@@ -432,11 +432,11 @@ def get_blog_1(request: Request) -> HTMLResponse:
     return views.TemplateResponse('blog-1.html', {"request": request})
 
 @app.get('/blog-2', response_class=HTMLResponse)
-def get_blog_1(request: Request) -> HTMLResponse:
+def get_blog_2(request: Request) -> HTMLResponse:
     return views.TemplateResponse('blog-2.html', {"request": request})
 
 @app.get('/blog-3', response_class=HTMLResponse)
-def get_blog_1(request: Request) -> HTMLResponse:
+def get_blog_3(request: Request) -> HTMLResponse:
     return views.TemplateResponse('blog-3.html', {"request": request})
 
 @app.get('/comments-{id}', response_class=HTMLResponse)

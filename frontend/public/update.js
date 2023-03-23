@@ -9,10 +9,12 @@ const updateFormHandler = {
       const formData = new FormData(this.formDoc);
 
       const data = {
-        username: formData.get("username"),
+        username: this.getUsernameFromPayload(),
         email: formData.get("email"),
         student_id: formData.get("student_id"),
       };
+
+      console.log("data", data)
 
       fetch("update-profile", {
         method: "POST",
@@ -61,6 +63,13 @@ const updateFormHandler = {
   displayUpdatedText() {
     const updatedText = document.getElementById("updated_text");
     updatedText.classList.remove("hidden");
+  },
+  getUsernameFromPayload() {
+    const token = this.getBearerToken();
+    const parts = token.split(".");
+    const payload = JSON.parse(atob(parts[1]));
+    const sub = payload.sub;
+    return sub;
   },
 };
 

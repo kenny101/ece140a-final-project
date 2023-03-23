@@ -50,8 +50,7 @@ const commentsHandler = {
 
     editBtn.addEventListener("click", async () => {
       const content = document.getElementById(`comment-${comment_id}`);
-      console.log("edit was clicked", content.innerText);
-
+      
       // Create a new form element
       const form = document.createElement("form");
       form.classList.add("flex", "flex-col");
