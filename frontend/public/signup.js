@@ -1,6 +1,5 @@
 const signUpFormHandler = {
   formDoc: document.getElementById("signup_form"),
-  signupDoc: document.getElementById("signup_btn"),
   handleClick() {
     this.formDoc.addEventListener("submit", (e) => {
       e.preventDefault();

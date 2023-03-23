@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SlideShare</title>
+    <script defer type="module" src="../public/reset.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <script></script>
+
+  <body class="bg-neutral-100 h-screen">
+    <nav
+      class="sticky top-0 px-2 py-3 flex justify-between items-center bg-transparent"
+    >
+      <a class="font-bold leading-none" href="./">
+        <h1 class="text-2xl">SlideShare</h1>
+      </a>
+    </nav>
+
+    <main class="flex flex-col justify-center w-screen">
+      <form class="m-10 px-40" id="reset_form">
+        <h3
+          class="block tracking-wide text-gray-700 text-3xl font-bold text-center"
+        >
+          Reset Password
+        </h3>
+        <hr
+          class="w-48 h-1 mx-auto my-4 bg-gray-200 border-0 rounded md:my-4 dark:bg-gray-300"
+        />
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="first_name"
+            >
+              First Name
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="first_name"
+              name="first_name"
+              type="text"
+              placeholder="Jane"
+              maxlength="50"
+              required
+            />
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="last_name"
+            >
+              Last Name
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="last_name"
+              name="last_name"
+              type="text"
+              placeholder="Doe"
+              maxlength="50"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="username"
+            >
+              Username
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="username"
+              name="username"
+              type="text"
+              placeholder="JaneDoe42"
+              maxlength="50"
+              required
+            />
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="student_id"
+            >
+              Student ID
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="student_id"
+              name="student_id"
+              placeholder="12345678"
+              maxlength="8"
+              pattern="[0-9]{8}"
+              type="text"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="janedoe@email.com"
+              maxlength="50"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-5">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="password"
+            >
+              New Password
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="******************"
+              maxlength="50"
+              required
+            />
+            <div
+              id="reset_warning"
+              class="flex items-center justify-center hidden"
+            >
+              <p class="text-red-500 text-s italic">Invalid Credentials.</p>
+            </div>
+
+            <div
+              id="success_message"
+              class="flex items-center justify-center hidden"
+            >
+              <p class="text-green-500 text-s font-semibold">Password Sucessfully Reset. </p>
+            </div>
+
+            <div class="flex items-center justify-center">
+              <button
+                class="text-xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-center my-2"
+                type="submit"
+                id="reset_btn"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

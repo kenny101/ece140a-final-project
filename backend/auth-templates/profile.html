@@ -1,52 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SlideShare</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <script defer type="module" src="../public/updates.js"></script>
 
-<body class="bg-blue-100 h-screen">
+  </head>
+
+  <body>
     <nav class="bg-transparent px-2 sm:px-4 py-3 sticky top-0 w-full">
-        <div class="container flex flex-wrap items-center justify-between mx-auto">
-            <a class="font-bold leading-none " href="./">
-                <h1 class="text-2xl">SlideShare</h1>
-            </a>
+      <div
+        class="container flex flex-wrap items-center justify-between mx-auto"
+      >
+        <a class="font-bold leading-none" href="./">
+          <h1 class="text-2xl">SlideShare</h1>
+        </a>
 
-            <div class="flex md:order-2">
-                <ul class="flex">
-                    <li class="mr-0">
-                        <a class="text-gray-700 font-bold hover:text-gray-800 hover:bg-gray-400 bg-gray-200 py-1 px-4 rounded-full hover:cursor-pointer"
-                            id="sign_out_btn">Sign Out</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="items-center justify-between w-full md:flex md:w-auto ">
-                <ul class="flex flex-col  bg-transparent md:flex-row md:space-x-8 md:mt-0">
-                    <li>
-                        <a href="./updates"
-                            class="block py-2 pl-3 pr-4 text-gray-900 text-2sm font-semibold underline">Updates</a>
-                    </li>
-                    <li>
-                        <a href="./leaderboard"
-                            class="block py-2 pl-3 pr-4 text-gray-900 text-2sm font-semibold hover:underline">Leaderboard</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-900 text-2sm font-semibold hover:underline">Profile</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="flex md:order-2">
+          <ul class="flex">
+            <li class="mr-0">
+              <a
+                class="text-gray-700 font-bold hover:text-gray-800 hover:bg-gray-400 bg-gray-200 py-1 px-4 rounded-full hover:cursor-pointer"
+                id="sign_out_btn"
+                >Sign Out</a
+              >
+            </li>
+          </ul>
         </div>
+        <div class="items-center justify-between w-full md:flex md:w-auto">
+          <ul
+            class="flex flex-col bg-transparent md:flex-row md:space-x-8 md:mt-0"
+          >
+            <li>
+              <a
+                href="./updates"
+                class="block py-2 pl-3 pr-4 text-gray-900 text-2sm font-semibold hover:underline"
+                >Updates</a
+              >
+            </li>
+            <li>
+              <a
+                href="./leaderboard"
+                class="block py-2 pl-3 pr-4 text-gray-900 text-2sm font-semibold hover:underline"
+                >Leaderboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 text-2sm font-semibold underline"
+                >Profile</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <main class="flex flex-col justify-center w-screen">
-        <h1 class="text-gray-900 font-bold text-4xl tracking-tight m-6 text-center">Profile</h1>
-        <hr class="w-48 h-1 mx-auto bg-gray-400 border-0 rounded mb-5">
+      <h1
+        class="text-gray-900 font-bold text-4xl tracking-tight m-6 text-center"
+      >
+        Update Profile
+      </h1>
+      <hr class="w-48 h-1 mx-auto bg-gray-400 border-0 rounded mb-8" />
+      <form class="mx-auto" id="update_form">
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="username"
+            >
+              Username
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="username"
+              name="username"
+              type="text"
+              placeholder="JaneDoe42"
+              maxlength="50"
+              required
+            />
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="student_id"
+            >
+              Student ID
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="student_id"
+              name="student_id"
+              placeholder="12345678"
+              maxlength="8"
+              pattern="[0-9]{8}"
+              type="text"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-2">
+          <div class="w-full px-3 mb-2">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="janedoe@email.com"
+              maxlength="50"
+              required
+            />
+            <a
+              class="font-bold text-sm text-blue-500 hover:text-blue-800"
+              href="./reset-password"
+            >
+              Change Password
+            </a>
+            <div
+              id="updated_text"
+              class="flex items-center justify-center m-2 hidden"
+            >
+              <p class="text-green-500 text-s font-semibold">Account information Updated</p>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="text-xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-center"
+          id="update_btn"
+        >
+          Update
+        </button>
+      </form>
     </main>
-
-</body>
-
+  </body>
 </html>

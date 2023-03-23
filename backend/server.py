@@ -251,6 +251,52 @@ async def load_comments(id: str, current_user: User = Depends(get_current_user))
         }
     print("Response was:", response)
     return JSONResponse(response)
+
+@app.post("/update-profile", response_class=JSONResponse)
+async def update_profile(userProfile: User, current_user: User = Depends(get_current_user)):
+    # Update account information
+    try:
+        query = "UPDATE users SET username=%s, student_id=%s, email=%s WHERE username=%s"
+        values = (userProfile.username, userProfile.student_id, userProfile.email, userProfile.username)
+        cursor.execute(query, values)
+        db.commit()
+        print(cursor.rowcount, " rows created. Profile was Updated")
+    except mysql.Error as err:
+        print("MySQL error: {0}".format(err))
+        db.rollback()
+
+@app.post("/reset-password", response_class=JSONResponse)
+async def reset_password(user: User):
+    hashed_pwd = get_password_hash(user.hashed_password)
+
+    try:
+        query = "UPDATE users SET hashed_password=%s WHERE first_name=%s AND last_name=%s AND username=%s AND student_id=%s AND email=%s"
+        values = (hashed_pwd, user.first_name, user.last_name, user.username, user.student_id, user.email)
+        cursor.execute(query, values)
+        db.commit()
+        print(cursor.rowcount, "password updated.")
+
+        if cursor.rowcount == 0:
+            return {"detail":"error"}
+    except mysql.Error as err:
+        print("MySQL error: {0}".format(err))
+        db.rollback()
+        return {"detail":"error"}
+    return {"detail":"success"}
+
+@app.get("/get-profile", response_class=JSONResponse)
+async def get_profile(current_user: User = Depends(get_current_user)):
+    cursor.execute("SELECT username, email, student_id, id FROM users WHERE username=%s", (current_user.username,))
+    records = cursor.fetchall()
+    response = {}
+    for index, row in enumerate(records):
+        response[index] = {
+            "username": str(row[0]),
+            "email": str(row[1]),
+            "student_id": str(row[2]),
+        }
+    print("Response was:", response)
+    return JSONResponse(response)
     
 
 @app.post("/token", response_model=Token)
@@ -332,6 +378,10 @@ async def get_updates_page_html(current_user: User = Depends(get_current_user)):
 @app.get('/', response_class=HTMLResponse)
 def get_homepage(request: Request) -> HTMLResponse:
     return views.TemplateResponse('homepage.html', {"request": request})
+
+@app.get('/reset', response_class=HTMLResponse)
+def get_homepage(request: Request) -> HTMLResponse:
+    return views.TemplateResponse('reset.html', {"request": request})
 
 
 @app.get('/signin', response_class=HTMLResponse)
