@@ -12,9 +12,6 @@ const resetFormHandler = {
         student_id: formData.get("student_id"),
         hashed_password: formData.get("password"),
       };
-
-      console.log("data", data);
-
       fetch("reset-password", {
         method: "POST",
         headers: {
@@ -62,4 +59,3 @@ const resetFormHandler = {
 };
 
 resetFormHandler.handleSubmit();
-// resetFormHandler.displayResetError();

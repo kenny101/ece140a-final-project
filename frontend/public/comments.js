@@ -39,7 +39,7 @@ const commentsHandler = {
             <p class="text-gray-400 text-sm">${date}</p>
           </div>
         </div>
-        <p class="-mt-4 text-gray-500">
+        <p id="comment-${comment_id}"class="-mt-4 text-gray-500">
           ${comment}
         </p>
     `;
@@ -47,12 +47,85 @@ const commentsHandler = {
 
     const editBtn = document.getElementById(`edit-btn-${comment_id}`);
     const deleteBtn = document.getElementById(`delete-btn-${comment_id}`);
+
     editBtn.addEventListener("click", async () => {
-      console.log("edit was clicked");
+      const content = document.getElementById(`comment-${comment_id}`);
+      console.log("edit was clicked", content.innerText);
+
+      // Create a new form element
+      const form = document.createElement("form");
+      form.classList.add("flex", "flex-col");
+      form.setAttribute("id", "edit_form");
+
+      // Create a new textarea element
+      const textarea = document.createElement("textarea");
+      textarea.classList.add(
+        "bg-gray-100",
+        "rounded",
+        "border",
+        "border-gray-400",
+        "leading-normal",
+        "resize-none",
+        "w-full",
+        "h-20",
+        "py-2",
+        "px-3",
+        "font-medium",
+        "placeholder-gray-700",
+        "focus:outline-none",
+        "focus:bg-white"
+      );
+      textarea.setAttribute("name", "body");
+      textarea.setAttribute("placeholder", "Edit your comment here.");
+      textarea.setAttribute("required", "");
+      textarea.value = content.innerText;
+
+      // Create a new submit input element
+      const submit = document.createElement("input");
+      submit.classList.add(
+        "text-white",
+        "bg-slate-500",
+        "hover:bg-slate-400",
+        "font-medium",
+        "rounded-lg",
+        "text-sm",
+        "px-3",
+        "py-2",
+        "mt-3",
+        "hover:cursor-pointer",
+        "w-1/6",
+        "self-end"
+      );
+      submit.setAttribute("type", "submit");
+      submit.setAttribute("value", "Save Changes");
+
+      // Add the textarea and submit elements to the form element
+      form.appendChild(textarea);
+      form.appendChild(submit);
+
+      // Replace the existing element with the new form element
+      content.parentNode.replaceChild(form, content);
+
+      const editForm = document.getElementById("edit_form");
+      editForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(editForm);
+        const body = {
+          username: this.getUsernameFromPayload(),
+          comment_id: comment_id,
+          comment: formData.get("body"),
+        };
+        this.makeReq("edit-comment", body, "PUT");
+        const pTag = document.createElement("p");
+        pTag.setAttribute("id", `comment-${comment_id}`);
+        pTag.setAttribute("class", "-mt-4 text-gray-500");
+        pTag.textContent = formData.get("body");
+        section.appendChild(pTag);
+        form.remove();
+      });
     });
 
     deleteBtn.addEventListener("click", async () => {
-      console.log("delete was clicked");
       section.remove();
       this.deleteComment(String(comment_id));
     });
@@ -153,7 +226,6 @@ const commentsHandler = {
     }
   },
   async deleteComment(id) {
-    console.log("id", { comment_id: id });
     const data = { comment_id: id };
     const response = await this.makeReq("delete-comment", data, "DELETE");
 

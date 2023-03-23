@@ -91,6 +91,11 @@ class Comments(BaseModel):
 
 class CommentDelete(BaseModel):
     comment_id: str
+
+class CommentEdit(BaseModel):
+    username: str
+    comment: str
+    comment_id: str
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 # Auth Config
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
@@ -220,10 +225,24 @@ async def post_comment(comments: Comments, user: User = Depends(get_current_user
         print("MySQL error: {0}".format(err))
         db.rollback()
         return
-    
+
+
+@app.put("/edit-comment")
+async def edit_comment(comments: CommentEdit, user: User = Depends(get_current_user)):
+    print("comment debug", comments)
+    try:
+        query = "UPDATE comments SET comment=%s WHERE username=%s AND id=%s"
+        values = (comments.comment, comments.username, comments.comment_id)
+        cursor.execute(query, values)
+        db.commit()
+        print(cursor.rowcount, " rows created. Comment was updated")
+    except mysql.Error as err:
+        print("MySQL error: {0}".format(err))
+        db.rollback()
+        return
+        
 @app.delete("/delete-comment", response_class=JSONResponse)
 async def delete_comment(comments: CommentDelete, user: User = Depends(get_current_user)):
-    print("delete debug", comments)
     try:
         # delete comment with id=2 from the database
         query = "DELETE FROM comments WHERE id = %s"
@@ -268,7 +287,6 @@ async def update_profile(userProfile: User, current_user: User = Depends(get_cur
 @app.post("/reset-password", response_class=JSONResponse)
 async def reset_password(user: User):
     hashed_pwd = get_password_hash(user.hashed_password)
-
     try:
         query = "UPDATE users SET hashed_password=%s WHERE first_name=%s AND last_name=%s AND username=%s AND student_id=%s AND email=%s"
         values = (hashed_pwd, user.first_name, user.last_name, user.username, user.student_id, user.email)

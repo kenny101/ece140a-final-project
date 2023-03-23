@@ -14,8 +14,6 @@ const updateFormHandler = {
         student_id: formData.get("student_id"),
       };
 
-      console.log("data", data);
-
       fetch("update-profile", {
         method: "POST",
         headers: {
@@ -26,7 +24,7 @@ const updateFormHandler = {
       })
         .then((response) => response.json())
         .then((response) => {
-          console.log("response:", response)
+          this.displayUpdatedText();
         })
         .catch((e) => {
           console.log("error", e);
@@ -55,7 +53,6 @@ const updateFormHandler = {
         this.setFormValue("username", response[0].username);
         this.setFormValue("student_id", response[0].student_id);
         this.setFormValue("email", response[0].email);
-        this.displayUpdatedText();
       })
       .catch((e) => {
         console.log("error", e);
