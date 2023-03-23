@@ -446,6 +446,10 @@ def get_comments(request: Request, id) -> HTMLResponse:
     return views.TemplateResponse('comments.html', {"request": request})
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-# If running the server directly from Python as a module
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=6543)
+    while True:
+        try:
+            uvicorn.run(app, host="localhost", port=6543)
+        except Exception as e:
+            print(f"Error occurred at {datetime.datetime.now()}: {e}")
+            continue
