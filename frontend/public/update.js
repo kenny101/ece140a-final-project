@@ -55,6 +55,7 @@ const updateFormHandler = {
         this.setFormValue("username", response[0].username);
         this.setFormValue("student_id", response[0].student_id);
         this.setFormValue("email", response[0].email);
+        this.displayUpdatedText();
       })
       .catch((e) => {
         console.log("error", e);
