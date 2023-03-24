@@ -81,7 +81,6 @@ class User(BaseModel):
     student_id: str | None = None
     hashed_password: str | None = None
     comments: str | None = None
-    jwt: str | None = None
 
 class Comments(BaseModel):
     username: str
