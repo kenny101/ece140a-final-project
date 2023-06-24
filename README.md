@@ -19,9 +19,6 @@ https://github.com/kenny101/ece140a-final-project/assets/53395124/46653408-22fa-
 
 
 ### File Structure
-
-<i>File structure differs from assignment outline, use the diagram below as an outline instead. </i>
-
 ![file-structure](https://user-images.githubusercontent.com/53395124/227109115-d70cd3fd-19b2-43c6-a0b4-044b6c4ef1f1.png)
 
 ### Database Design
