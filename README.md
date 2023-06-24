@@ -14,7 +14,9 @@ The main feature of this website is to be able to view and comment on other stud
 - [ ] Make website more user-friendly/responsive for smaller screens
 - [ ] Use ORM library such as [SQLAlcademy](https://www.sqlalchemy.org/) rather than executing raw SQL queries
 
-https://user-images.githubusercontent.com/53395124/227124110-a16337dd-fb2d-4677-ab6d-2a4dd0db9792.mp4
+
+https://github.com/kenny101/ece140a-final-project/assets/53395124/46653408-22fa-403e-9106-f7baf3479785
+
 
 ### File Structure
 
