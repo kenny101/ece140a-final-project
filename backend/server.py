@@ -30,6 +30,11 @@ import re
 # Use for parsing html files
 from bs4 import BeautifulSoup
 
+# MIME type error fix
+import mimetypes
+mimetypes.init()
+mimetypes.add_type('application/javascript', '.js')
+
 def readHtmlBody(filename:str):
     with open('./auth-templates/'+filename, 'r') as file:
         html = file.read()
