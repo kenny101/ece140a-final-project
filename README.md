@@ -1,4 +1,6 @@
 # ECE140A Final Project: MVP Leaderboards
+## [Live Website here](https://6f75-34-83-111-253.ngrok-free.app/)
+
 This is a final project for ECE140A at UCSD which "Builds on a solid foundation of electrical and computer engineer skills, this course strives to broaden student skills in software, full-stack engineering, and concrete understanding of methods related to the realistic development of a commercial product. Students will research, design, and develop an IOT device to serve an emerging market". [ECE Courses at UCSD Here](https://catalog.ucsd.edu/courses/ECE.html) 
 
 The main feature of this website is to be able to view and comment on other student's ideas for ECE140a. This is not a real product, rather is used for learning full-stack engineering using [FastAPI](https://fastapi.tiangolo.com/) and MySQL database to implement a RESTful API as well as auth using [JWT (JSON Web Tokens)](https://jwt.io/). You can learn more about what makes an API RESTful [here.](https://www.youtube.com/watch?v=lsMQRaeKNDk)
