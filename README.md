@@ -5,15 +5,14 @@ The main feature of this website is to be able to view and comment on other stud
 
 ### Features Implemented:
 - [x] Auth: Login, account creation, deletion, update user information
-- [x] Session Expiry - Auto Logout
+- [x] Session Expiry - Auto Logout using JSON Web Tokens
+- [x] Redirecting invalid pages (401/404 pages)
 - [x] Edit/delete Comment in Leaderboard Commenting System
 - [x] View different page content on the webpage
 
 ### Future Features:
 - [ ] Make website more user-friendly/responsive for smaller screens
 - [ ] Use ORM library such as [SQLAlcademy](https://www.sqlalchemy.org/) rather than executing raw SQL queries
-
-### Extra Credit Live Website: [Click here to see the live website.](https://0855-2603-8001-8e00-5e00-1d2e-19a6-9c85-8ddb.ngrok.io/)
 
 https://user-images.githubusercontent.com/53395124/227124110-a16337dd-fb2d-4677-ab6d-2a4dd0db9792.mp4
 
