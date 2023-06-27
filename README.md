@@ -10,7 +10,7 @@ The main feature of this website is to be able to view and comment on other stud
 - [x] Session Expiry - Auto Logout using JSON Web Tokens
 - [x] Redirecting invalid pages (401/404 pages)
 - [x] Edit/delete Comment in Leaderboard Commenting System
-- [x] View different page content on the webpage
+- [x] Displaying weekly blog content
 
 ### Future Features:
 - [ ] Make website more user-friendly/responsive for smaller screens
