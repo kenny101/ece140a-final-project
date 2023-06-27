@@ -6,7 +6,7 @@ This is a final project for ECE140A at UCSD which "Builds on a solid foundation 
 The main feature of this website is to be able to view and comment on other student's ideas for ECE140a. This is not a real product, rather is used for learning full-stack engineering using [FastAPI](https://fastapi.tiangolo.com/) and MySQL database to implement a RESTful API as well as auth using [JWT (JSON Web Tokens)](https://jwt.io/). You can learn more about what makes an API RESTful [here.](https://www.youtube.com/watch?v=lsMQRaeKNDk)
 
 ### Features Implemented:
-- [x] Auth: Login, account creation, deletion, update user information
+- [x] Auth flows: Login, account creation, deletion, update user information
 - [x] Session Expiry - Auto Logout using JSON Web Tokens
 - [x] Redirecting invalid pages (401/404 pages)
 - [x] Edit/delete Comment in Leaderboard Commenting System
